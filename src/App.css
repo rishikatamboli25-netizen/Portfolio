@@ -1,0 +1,7 @@
+/* Hide native cursor everywhere while custom cursor is active */
+html.custom-cursor-active,
+html.custom-cursor-active *,
+html.custom-cursor-active *::before,
+html.custom-cursor-active *::after {
+  cursor: none !important;
+}

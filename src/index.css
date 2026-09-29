@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@layer base{
+    @font-face {
+        font-family: montagna;
+        src: url(./assets/font/MontagnaLTD.woff2) format('woff2');
+        font-style: normal;
+        font-display: swap;
+        font-weight: 100 900;
+    }
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+  background-color: black;
+}
+
+
+@layer utilities{
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+.smokey-fluid-cursor {
+  pointer-events: none !important;
+}
+
+/* Hide native cursor everywhere while custom cursor is active */
+html.custom-cursor-active,
+html.custom-cursor-active *,
+html.custom-cursor-active *::before,
+html.custom-cursor-active *::after {
+  cursor: none !important;
+}
