@@ -18,11 +18,11 @@ const Stack = () => {
       id: "02",
       title: "Backend",
       description: "Where the logic and data live",
-      tools: ["Node.js", "Expres", "MongoDB"],
+      tools: ["Node.js", "Express", "MongoDB"],
     },
     {
       id: "03",
-      title: "Infra & Tolls",
+      title: "Infra & Tools",
       description: "What keeps it running",
       tools: ["Docker", "Kubernetes", "CI/CD", "AWS", "GitHub Actions"],
     },
@@ -61,19 +61,16 @@ const Stack = () => {
           scaleY: 1,
           duration: 0.8,
           ease: "power3.out",
-        })
-
-          // Content appears as line reaches it
-          .to(
-            content,
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.7,
-              ease: "power3.out",
-            },
-            "-=0.35"
-          );
+        }).to(
+          content,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: "power3.out",
+          },
+          "-=0.35"
+        );
       });
     }, sectionRef);
 
@@ -83,58 +80,181 @@ const Stack = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-auto px-44 py-24 bg-black"
+      className="
+        bg-black
+        px-5
+        py-14
+
+        sm:px-8
+        sm:py-16
+
+        md:h-auto
+        md:px-44
+        md:py-24
+      "
     >
-      {/* Section Heading */}
-      <div className="text-primary text-[2.5rem] font-montaga pb-20">
+      {/* =========================
+          SECTION HEADING
+      ========================= */}
+      <div
+        className="
+          pb-12
+          font-montaga
+          text-3xl
+          leading-none
+          text-primary
+
+          sm:pb-16
+          sm:text-[2.2rem]
+
+          md:pb-20
+          md:text-[2.5rem]
+        "
+      >
         The Building Blocks.
       </div>
 
-      {/* Stack Blocks */}
-      {stack.map((category) => (
-        <div
-          key={category.id}
-          className="stack-block h-[30vh] flex gap-5"
-        >
-          {/* Number */}
-          <div className="flex flex-col text-gray-500 justify-between">
-            {category.id}
-          </div>
+      {/* =========================
+          STACK BLOCKS
+      ========================= */}
+      <div className="flex flex-col">
+        {stack.map((category) => (
+          <div
+            key={category.id}
+            className="
+              stack-block
+              grid
+              min-h-[170px]
+              grid-cols-[auto_1px_1fr]
+              gap-4
+              pb-10
 
-          {/* Animated Line */}
-          <div className="relative w-[1px] bg-primary/20 overflow-hidden">
-            <div className="stack-line absolute top-0 left-0 w-full h-full bg-primary/65" />
-          </div>
+              sm:min-h-[190px]
+              sm:gap-5
+              sm:pb-12
 
-          {/* Content */}
-          <div className="stack-content">
-            <h1 className="text-primary font-montaga text-[1.7rem]">
-              {category.title}
-            </h1>
+              md:h-[30vh]
+              md:grid-cols-none
+              md:flex
+              md:gap-5
+              md:pb-0
+            "
+          >
+            {/* NUMBER */}
+            <div
+              className="
+                flex
+                flex-col
+                justify-start
+                font-inter
+                text-xs
+                text-gray-500
+                pt-1
 
-            <p className="text-[1rem] font-jakarta text-gray-400 font-thin">
-              {category.description}
-            </p>
+                sm:text-sm
 
-            <div className="flex gap-2">
-              {category.tools?.map((tool, index) => (
-                <div
-                  className="text-white pt-5"
-                  key={index}
-                >
-                  {tool}
+                md:pt-0
+              "
+            >
+              {category.id}
+            </div>
 
-                  {index !== category.tools.length - 1 && (
-                    <span className="text-gray-400 pl-2">
-                      /
-                    </span>
-                  )}
-                </div>
-              ))}
+            {/* ANIMATED LINE */}
+            <div
+              className="
+                relative
+                w-px
+                overflow-hidden
+                bg-primary/20
+              "
+            >
+              <div className="stack-line absolute left-0 top-0 h-full w-full bg-primary/65" />
+            </div>
+
+            {/* CONTENT */}
+            <div className="stack-content min-w-0">
+              <h1
+                className="
+                  font-montaga
+                  text-2xl
+                  leading-tight
+                  text-primary
+
+                  sm:text-[1.7rem]
+
+                  md:text-[1.7rem]
+                "
+              >
+                {category.title}
+              </h1>
+
+              <p
+                className="
+                  mt-1
+                  font-jakarta
+                  text-sm
+                  font-thin
+                  leading-relaxed
+                  text-gray-400
+
+                  sm:text-base
+
+                  md:text-[1rem]
+                "
+              >
+                {category.description}
+              </p>
+
+              {/* TOOLS */}
+              <div
+                className="
+                  mt-5
+                  flex
+                  flex-wrap
+                  items-center
+                  gap-x-2
+                  gap-y-2
+
+                  md:mt-0
+                  md:flex
+                  md:gap-2
+                "
+              >
+                {category.tools?.map((tool, index) => (
+                  <React.Fragment key={tool}>
+                    <div
+                      className="
+                        font-inter
+                        text-sm
+                        text-white
+
+                        sm:text-base
+
+                        md:pt-5
+                      "
+                    >
+                      {tool}
+                    </div>
+
+                    {index !== category.tools.length - 1 && (
+                      <span
+                        className="
+                          hidden
+                          text-gray-500
+                          md:inline
+                          md:pl-0
+                        "
+                      >
+                        /
+                      </span>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 };
