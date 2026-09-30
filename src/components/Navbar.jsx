@@ -28,9 +28,7 @@ const Navbar = () => {
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
 
-        if (
-          scrollPosition >= section.element.offsetTop
-        ) {
+        if (scrollPosition >= section.element.offsetTop) {
           currentSection = section.id;
           break;
         }
@@ -79,6 +77,7 @@ const Navbar = () => {
             h-[5vh]
             w-fit
             px-7
+            max-[640px]:px-5
             text-[0.8rem]
             cursor-pointer
           "
@@ -88,6 +87,7 @@ const Navbar = () => {
               flex
               h-full
               gap-4
+              max-[640px]:gap-2
               w-fit
               mx-auto
               font-jakarta
@@ -103,6 +103,7 @@ const Navbar = () => {
                   text-black
                   h-full
                   px-3
+                  max-[640px]:px-2
                   flex
                   items-center
                   ${

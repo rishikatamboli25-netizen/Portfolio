@@ -254,6 +254,48 @@ const Profile = () => {
                   left-4
                   top-8
                   z-20
+
+                  opacity-100
+
+                  md:hidden
+                "
+              >
+                <span
+                  className="
+                    block
+                    font-montaga
+                    text-xl
+                    font-semibold
+                    leading-none
+                    text-primary
+                  "
+                >
+                  Rishika Tamboli
+                </span>
+
+                <span
+                  className="
+                    block
+                    pt-1
+                    font-jakarta
+                    text-xs
+                    font-light
+                    uppercase
+                    leading-none
+                    text-primary/80
+                  "
+                >
+                  Web developer
+                </span>
+              </div>
+
+              {/* DESKTOP PROFILE INFO */}
+              <div
+                className="
+                  absolute
+                  left-4
+                  top-8
+                  z-20
                   hidden
                   opacity-0
                   transition-all
@@ -298,7 +340,18 @@ const Profile = () => {
               </div>
 
               {/* CUTOUT */}
-              <div className="cutout flex h-full items-end justify-center">
+              <div
+                className="
+                  cutout
+                  flex
+                  h-full
+                  w-full
+                  items-end
+                  justify-end
+
+                  md:justify-center
+                "
+              >
                 <img
                   className="
                     relative
@@ -308,9 +361,13 @@ const Profile = () => {
                     object-contain
                     object-bottom
 
+                    /* MOBILE — IMAGE ALREADY SHIFTED */
+                    max-[767px]:translate-x-[18%]
+
                     md:h-auto
                     md:w-auto
                     md:max-h-full
+                    md:translate-x-0
                     md:transition-transform
                     md:duration-500
                     md:ease-out
@@ -365,7 +422,6 @@ const Profile = () => {
                   md:py-1
                 "
               >
-                {/* RADIAL BLACK FILL — DESKTOP ONLY */}
                 <span
                   className="
                     button-fill
@@ -404,7 +460,6 @@ const Profile = () => {
                   md:py-1
                 "
               >
-                {/* RADIAL BLACK FILL — DESKTOP ONLY */}
                 <span
                   className="
                     button-fill
@@ -477,4 +532,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
