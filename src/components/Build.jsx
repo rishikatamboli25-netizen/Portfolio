@@ -1,4 +1,5 @@
 import React, { useLayoutEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -245,12 +246,8 @@ const Build = () => {
                   md:gap-3
                 "
               >
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full"
-                >
+
+               <Link to={`${project.link}`}>
                   <button
                     className="
                       w-full
@@ -271,12 +268,9 @@ const Build = () => {
                   >
                     Visit
                   </button>
-                </a>
+                </Link>
 
-                <a
-                  href={project.detailpage}
-                  className="w-full"
-                >
+                <Link to={`${project.detailpage}`}>
                   <button
                     className="
                       w-full
@@ -297,7 +291,7 @@ const Build = () => {
                   >
                     Details
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
           </article>

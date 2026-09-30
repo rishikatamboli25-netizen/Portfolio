@@ -92,7 +92,7 @@ const Talk = () => {
         "
       >
         <a
-          href="https://github.com/"
+          href="https://github.com/rishikatamboli25-netizen"
           target="_blank"
           rel="noreferrer"
           className="
