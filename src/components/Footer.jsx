@@ -22,7 +22,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative pt-20 min-h-[50vh] overflow-hidden bg-primary px-7 py-8 text-black md:px-10 lg:px-[3.75rem]">
+    <footer className="relative pt-20 min-h-[50vh] overflow-hidden bg-primary px-4  py-8 text-black md:px-10 lg:px-[3.75rem]">
       {/* Decorative circles */}
 
       <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-black/[0.10]" />
@@ -117,7 +117,7 @@ const Footer = () => {
 
           {/* Navigation */}
 
-          <div className="flex gap-16 pb-2 pr-5">
+          <div className="flex md:gap-16 gap-4 pb-2 pr-5 md:pr-0">
 
             <div>
 
@@ -170,7 +170,9 @@ const Footer = () => {
               <div className="flex flex-col gap-4">
 
                 <a
-                  href="#"
+                  href="https://github.com/rishikatamboli25-netizen"
+                  target="_blank"
+                  rel="noopener nonreffer"
                   className="
                     flex
                     items-center
@@ -188,7 +190,9 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="#"
+                  href="https:/linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreffer"
                   className="
                     flex
                     items-center
@@ -205,23 +209,27 @@ const Footer = () => {
                   Linkedin
                 </a>
 
-              </div>
-
-            </div>
-
-
-            {/* Connect */}
-
-            <div>
-
-              <p className="mb-6 font-jakarta text-[10px] uppercase tracking-[0.22em] text-black/45">
-                Contact
-              </p>
-
-              <div className="flex flex-col gap-4">
-
                 <a
-                  href="#"
+                  href="mailto:RishikaTamboli25@gmail.com"
+                  target="_blank"
+                  rel="noopener noreffer"
+                  className="
+                    flex
+                    items-center
+                    gap-3
+                    font-jakarta
+                    text-[12px]
+                    tracking-[0.08em]
+                    transition-opacity
+                    hover:opacity-50
+                  "
+                >
+                  <FaEnvelope size={13} />
+                  RishikaTamboli25@gmail.com
+                </a>
+
+                
+                <a
                   className="
                     flex
                     items-center
@@ -236,23 +244,6 @@ const Footer = () => {
                 >
                   <FaWhatsapp size={13} />
                   +91 9462298860
-                </a>
-
-                <a
-                  href="#"
-                  className="
-                    flex
-                    items-center
-                    gap-3
-                    font-jakarta
-                    text-[12px]
-                    tracking-[0.08em]
-                    transition-opacity
-                    hover:opacity-50
-                  "
-                >
-                  <FaEnvelope size={13} />
-                  RishikaTamboli25@gmail.com
                 </a>
 
               </div>

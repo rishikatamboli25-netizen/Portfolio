@@ -143,22 +143,14 @@ const Stack = () => {
             {/* NUMBER */}
             <div
               className="
-                flex
-                flex-col
-                justify-start
-                font-inter
                 text-xs
                 text-gray-500
-                pt-1
-
                 sm:text-sm
-
                 md:pt-0
               "
             >
               {category.id}
             </div>
-
             {/* ANIMATED LINE */}
             <div
               className="
@@ -166,6 +158,7 @@ const Stack = () => {
                 w-px
                 overflow-hidden
                 bg-primary/20
+                ml-2
               "
             >
               <div className="stack-line absolute left-0 top-0 h-full w-full bg-primary/65" />
