@@ -11,27 +11,166 @@ import {
   FiFilter,
   FiMap,
   FiSmartphone,
-  FiCode,
-  FiServer,
-  FiDatabase,
   FiShield,
-  FiMonitor,
-  FiZap,
+  FiShoppingCart,
+  FiCreditCard,
+  FiCpu,
+  FiFileText,
 } from "react-icons/fi";
 
 import visor1 from "../assets/Visor1.png";
 import visor2 from "../assets/Visor2.png";
 import visor3 from "../assets/Visor3.png";
+
 import Park1 from "../assets/Park1.png";
 import Park2 from "../assets/Park2.png";
 import Park3 from "../assets/Park3.png";
-import Bookly1 from "../assets/Bookly1.png"
-import Bookly2 from "../assets/Bookly2.png"
-import Bookly3 from "../assets/Bookly3.png"
+
+import Bookly1 from "../assets/Bookly1.png";
+import Bookly2 from "../assets/Bookly2.png";
+import Bookly3 from "../assets/Bookly3.png";
+
+import CreatorDesk1 from "../assets/CreatorDesk1.png";
+import CreatorDesk2 from "../assets/CreatorDesk2.png";
+import CreatorDesk3 from "../assets/CreatorDesk3.png";
+
+import CreatorDeskAdmin1 from "../assets/CreatorDeskAdmin1.png";
+import CreatorDeskAdmin2 from "../assets/CreatorDeskAdmin2.png";
+import CreatorDeskAdmin3 from "../assets/CreatorDeskAdmin3.png";
 
 const projects = {
-  visor: {
+  creatorsdesk: {
     number: "01",
+    title: "CREATOR'S DESK",
+    category: "E-COMMERCE PLATFORM",
+
+    description:
+      "A full-stack e-commerce platform for discovering and purchasing desk accessories, tech gear, and creator equipment.",
+
+    tech: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Razorpay",
+      "AWS SQS",
+      "Google Gemini",
+      "Cloudinary",
+      "Docker",
+    ],
+
+    liveUrl: "https://creator-s-desk.vercel.app/",
+    githubUrl:
+      "https://github.com/rishikatamboli25-netizen/Creator-s-Desk",
+
+    heroImage: CreatorDesk1,
+
+    overview:
+      "Creator's Desk is a full-stack commerce platform built for creators, developers, and desk-setup enthusiasts. It combines product discovery, cart and checkout, OTP authentication, inventory-aware ordering, online payments, order tracking, automated invoices, and an AI-powered desk setup assistant into a single shopping experience.",
+
+    features: [
+      {
+        title: "AI DESK BUILDER",
+        description:
+          "AI-powered setup assistant that analyzes a user's use case, budget, existing gear, and preferences to recommend suitable products from the actual catalog.",
+        icon: FiCpu,
+      },
+      {
+        title: "SMART CHECKOUT",
+        description:
+          "Inventory-aware checkout reserves available stock before order creation and releases reservations when a checkout cannot be completed.",
+        icon: FiShoppingCart,
+      },
+      {
+        title: "PAYMENTS & ORDERS",
+        description:
+          "Supports Razorpay online payments and Cash on Delivery with server-side payment verification and order lifecycle management.",
+        icon: FiCreditCard,
+      },
+      {
+        title: "EVENT-DRIVEN INVOICES",
+        description:
+          "Order events are processed through AWS SQS, triggering asynchronous PDF invoice generation and Cloudinary file storage.",
+        icon: FiFileText,
+      },
+    ],
+
+    previews: [
+      CreatorDesk2,
+      CreatorDesk3,
+    ],
+
+    built:
+      "I built Creator's Desk as a full-stack e-commerce system using React, Tailwind CSS, Node.js, Express, and MongoDB with a microservice-oriented backend. The platform includes OTP authentication, product discovery, cart and checkout, inventory reservation, Razorpay payment verification, order management, asynchronous invoice processing through AWS SQS, Cloudinary-hosted invoice files, and an AI Desk Builder powered by Google Gemini. The project was developed using an AI-assisted development workflow while designing and integrating the application architecture, business logic, service communication, and deployment.",
+  },
+
+  creatorsdeskadmin: {
+    number: "02",
+    title: "CD ADMIN",
+    category: "ADMIN CONSOLE",
+
+    description:
+      "A secure administrative control panel for managing Creator's Desk's catalog, inventory, orders, customers, payments, invoices, and administrators.",
+
+    tech: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "RBAC",
+      "TOTP MFA",
+    ],
+
+    liveUrl: "https://creator-s-desk-x6h9.vercel.app/",
+    githubUrl:
+      "https://github.com/rishikatamboli25-netizen/Creator-s-Desk",
+
+    heroImage: CreatorDeskAdmin1,
+
+    overview:
+      "CD Admin is a dedicated administration platform for the operational side of Creator's Desk. It provides permission-based access to catalog, inventory, pricing, orders, customers, payments, refunds, invoices, and administrator management while enforcing a separate security layer for privileged operations.",
+
+    features: [
+      {
+        title: "RBAC & ACCESS CONTROL",
+        description:
+          "Role-based access control with granular permissions for managing sensitive administrative modules and actions.",
+        icon: FiShield,
+      },
+      {
+        title: "MFA SECURITY",
+        description:
+          "TOTP-based multi-factor authentication with encrypted secrets and one-time recovery codes for administrator accounts.",
+        icon: FiLock,
+      },
+      {
+        title: "CATALOG & INVENTORY",
+        description:
+          "Manage products, stock levels, availability, pricing changes, inventory movements, and product price history.",
+        icon: FiBox,
+      },
+      {
+        title: "OPERATIONS & AUDIT",
+        description:
+          "Manage orders, customers, payments, refunds, invoices, and admin accounts with detailed audit logging for sensitive actions.",
+        icon: FiActivity,
+      },
+    ],
+
+    previews: [
+      CreatorDeskAdmin2,
+      CreatorDeskAdmin3,
+    ],
+
+    built:
+      "I built CD Admin as a separate React and Node.js administration system for Creator's Desk. It includes granular RBAC permissions, secure server-side sessions, CSRF protection, rate limiting, TOTP-based MFA, administrator management, catalog and inventory controls, pricing history, order and customer operations, payment and refund workflows, invoice management, and detailed audit logging. The project was developed using an AI-assisted development workflow with a strong focus on security, access control, and operational reliability.",
+  },
+
+  visor: {
+    number: "03",
     title: "VISOR",
     category: "SMART GLASSES",
 
@@ -47,7 +186,8 @@ const projects = {
     ],
 
     liveUrl: "https://visor-rumg-iota.vercel.app/",
-    githubUrl: "https://github.com/rishikatamboli25-netizen/Visor",
+    githubUrl:
+      "https://github.com/rishikatamboli25-netizen/Visor",
 
     heroImage: visor1,
 
@@ -83,7 +223,7 @@ const projects = {
 
     previews: [
       visor2,
-      visor3
+      visor3,
     ],
 
     built:
@@ -91,7 +231,7 @@ const projects = {
   },
 
   bookly: {
-    number: "02",
+    number: "04",
     title: "BOOKLY",
     category: "E-LIBRARY",
 
@@ -107,7 +247,8 @@ const projects = {
     ],
 
     liveUrl: "https://bookly-e-library.vercel.app/",
-    githubUrl: "https://github.com/rishikatamboli25-netizen/Bookly-E-Library",
+    githubUrl:
+      "https://github.com/rishikatamboli25-netizen/Bookly-E-Library",
 
     heroImage: Bookly1,
 
@@ -142,8 +283,8 @@ const projects = {
     ],
 
     previews: [
-        Bookly2,
-        Bookly3
+      Bookly2,
+      Bookly3,
     ],
 
     built:
@@ -151,7 +292,7 @@ const projects = {
   },
 
   parkspot: {
-    number: "03",
+    number: "05",
     title: "PARKSPOT",
     category: "PARKING FINDER",
 
@@ -167,7 +308,8 @@ const projects = {
     ],
 
     liveUrl: "https://park-spot-tau.vercel.app/",
-    githubUrl: "https://github.com/rishikatamboli25-netizen/ParkSpot",
+    githubUrl:
+      "https://github.com/rishikatamboli25-netizen/ParkSpot",
 
     heroImage: Park1,
 
@@ -203,7 +345,7 @@ const projects = {
 
     previews: [
       Park2,
-      Park3
+      Park3,
     ],
 
     built:

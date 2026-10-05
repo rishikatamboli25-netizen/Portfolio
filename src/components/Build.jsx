@@ -6,7 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import project1 from "../assets/E-library.png";
 import project2 from "../assets/Parking.png";
 import project3 from "../assets/Visor1.png";
-import project4 from "../assets/Car.png";
+
+import CreatorDesk from "../assets/CreatorDesk1.png";
+import CreatorDeskAdmin from "../assets/CreatorDeskAdmin1.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +17,27 @@ const Build = () => {
   const stageRefs = useRef([]);
 
   const Project = [
+    {
+      ProjectName: "Creator's Desk",
+      Img: CreatorDesk,
+      Desc: "A full-stack e-commerce platform for discovering and purchasing desk accessories, tech gear, and creator equipment.",
+      link: "https://creator-s-desk.vercel.app/",
+      detailpage: "/project/creatorsdesk",
+    },
+    {
+      ProjectName: "CD Admin",
+      Img: CreatorDeskAdmin,
+      Desc: "A secure admin console for managing catalog, inventory, orders, payments, customers, invoices, and administrator access.",
+      link: "https://creator-s-desk-x6h9.vercel.app/",
+      detailpage: "/project/creatorsdeskadmin",
+    },
+    {
+      ProjectName: "VISOR",
+      Img: project3,
+      Desc: "Explore next-generation smart glasses with immersive features, sleek design, and complete pricing details.",
+      link: "https://visor-rumg-iota.vercel.app/",
+      detailpage: "/project/visor",
+    },
     {
       ProjectName: "Bookly",
       Img: project1,
@@ -28,13 +51,6 @@ const Build = () => {
       Desc: "Search any location to discover nearby parking spaces with live availability and essential facility information.",
       link: "https://park-spot-tau.vercel.app/",
       detailpage: "/project/parkspot",
-    },
-    {
-      ProjectName: "VISOR",
-      Img: project3,
-      Desc: "Explore next-generation smart glasses with immersive features, sleek design, and complete pricing details.",
-      link: "https://visor-rumg-iota.vercel.app/",
-      detailpage: "/project/visor",
     },
   ];
 
@@ -131,8 +147,6 @@ const Build = () => {
               bg-primary
               will-change-transform
 
-              
-
               md:h-[86vh]
               md:w-[90vw]
               md:max-w-[1500px]
@@ -186,7 +200,6 @@ const Build = () => {
                 sm:px-5
                 sm:py-5
 
-                
                 md:flex-row
                 md:items-center
                 md:gap-0
@@ -246,8 +259,7 @@ const Build = () => {
                   md:gap-3
                 "
               >
-
-               <Link to={`${project.link}`}>
+                <Link to={project.link}>
                   <button
                     className="
                       w-full
@@ -270,7 +282,7 @@ const Build = () => {
                   </button>
                 </Link>
 
-                <Link to={`${project.detailpage}`}>
+                <Link to={project.detailpage}>
                   <button
                     className="
                       w-full
@@ -302,5 +314,3 @@ const Build = () => {
 };
 
 export default Build;
-
-
